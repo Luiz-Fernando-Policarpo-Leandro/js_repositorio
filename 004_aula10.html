@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>004</title>
+    <style>
+       div#interaja {
+        background: black;
+        color: white;
+        font: normal 9pt Arial;
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
+        text-align: center;
+       }
+    </style>
+</head>
+<body>
+    <!-- onclick="clicar()" onmouseenter ="entrar()" onmouseleave="sair()"; trocamos pelo listen -->
+    <div id="interaja" >
+    <p>ola mundo, interaja em mim</p>
+    </div>
+    
+    <script>
+        var area = document.getElementById('interaja').getElementsByTagName('p')[0]
+        
+        area.addEventListener('click',clicar)
+        area.addEventListener('mouseenter',entrar)
+        area.addEventListener('mouseout',sair)
+        
+        function clicar() {
+            area.innerText = 'clicou!'
+            area.style.backgroundColor= 'red'
+        }
+
+        function entrar() {
+            area.innerText= 'entrou!'
+        }
+
+        function sair() {
+            area.innerText= 'saiu!'
+            area.style.backgroundColor= 'black'
+        }
+    </script>
+</body>
+</html>

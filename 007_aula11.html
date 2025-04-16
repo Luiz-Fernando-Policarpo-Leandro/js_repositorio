@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>007</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <h1>Velocidade do Carro</h1>
+    velocidade:<input type="number" name="velnum" id="velnum" required> km/h
+    <h1>Seu Pais de Origem</h1>
+    Seu País:<input type="text" name="txtpais" id="txtpais"><br>
+    <input type="button" name="butão" id="butão" value="enviar">
+    <div id="texto_novo"></div>
+    
+    <script>
+        document.getElementById('butão').addEventListener('click', clicar_verificar)
+        
+        function clicar_verificar(){
+            var velnum = document.getElementById('velnum').value
+            var txtpais = document.getElementById('txtpais').value
+            var text_h1 = document.getElementById('texto_novo')
+            if (velnum != '' && txtpais != ''){
+                if (velnum >= 60 ) {velnum = 'você foi multado'}else{velnum = `sua velocidade é de ${velnum}` }
+                if (txtpais.toLowerCase() == 'br' ){txtpais = 'você é do brasil'}else{txtpais = 'você não é do brasil'}
+                text_h1.innerHTML = `<h1>${velnum} e ${txtpais}</h1>`
+            }else{
+                text_h1.innerHTML = `<h1> coloque algo</h1>`
+            }
+        }
+    </script>
+</body>
+</html>
